@@ -74,11 +74,16 @@ def detect_claims(model_id: str, metadata: dict) -> dict:
 
 def stage1_screen(config: dict) -> dict:
     """Match config fingerprint against KNOWN_BASES. Handles nested text_config."""
-    # Merge text_config (multimodal pattern: Qwen3.5, Mistral3, MiMo-V2.5)
-    if config.get("text_config") and not config.get("vocab_size"):
-        tc = config["text_config"]
-        config = {**tc, **{k: v for k, v in config.items()
-                           if k not in ("text_config", "vision_config", "audio_config")}}
+    # Lift nested LLM config into top-level when top-level vocab/hidden is absent.
+    # Handles: text_config (Qwen3.5/3.6, Mistral3, MiMo-V2.5), llm_config (NemotronH Omni)
+    _NESTED_KEYS = ("text_config", "llm_config")
+    _SKIP_KEYS = ("text_config", "llm_config", "vision_config", "audio_config", "sound_config")
+    if not config.get("vocab_size"):
+        for nested_key in _NESTED_KEYS:
+            if config.get(nested_key) and config[nested_key].get("vocab_size"):
+                tc = config[nested_key]
+                config = {**tc, **{k: v for k, v in config.items() if k not in _SKIP_KEYS}}
+                break
 
     vocab = config.get("vocab_size")
     model_type = (config.get("model_type") or "").lower()

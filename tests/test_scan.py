@@ -64,3 +64,28 @@ def test_gguf_returns_early():
     result = do_scan("unsloth/Qwen3.6-35B-A3B-GGUF")
     assert "error" in result
     assert "GGUF" in result["error"]
+
+
+NEMOTRON_LLM_CONFIG = {
+    "model_type": "NemotronH_Nano_Omni_Reasoning_V3",
+    "llm_config": {
+        "model_type": "nemotron_h",
+        "vocab_size": 131072,
+        "hidden_size": 2688,
+        "num_hidden_layers": 52,
+    },
+    "vision_config": {"model_type": "internvl"},
+    "sound_config": {"model_type": "conformer"},
+}
+
+
+def test_llm_config_nesting_lifted():
+    result = stage1_screen(NEMOTRON_LLM_CONFIG)
+    assert result["config_signals"]["vocab_size"] == 131072, "Should lift vocab from llm_config"
+
+
+def test_nemotron_h_identified():
+    result = stage1_screen(NEMOTRON_LLM_CONFIG)
+    assert result["base_matches"], "NemotronH should match"
+    assert result["base_matches"][0]["base"] == "nemotron_h"
+    assert result["base_matches"][0]["confidence"] == "HIGH"

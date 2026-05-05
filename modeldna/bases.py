@@ -67,4 +67,9 @@ KNOWN_BASES: dict[str, dict] = {
         "vocab_size": [100352, 100352],
         "model_type_patterns": ["phi3", "phi4"],
     },
+    "nemotron_h": {
+        "name": "NemotronH (NVIDIA Mamba+MoE hybrid)",
+        "vocab_size": 131072,
+        "model_type_patterns": ["nemotron_h", "nemotronh"],
+    },
 }
