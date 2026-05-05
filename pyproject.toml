@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "modeldna"
+version = "0.1.0"
+description = "The DNA test for AI models — verify provenance before you download"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+authors = [{ name = "RadicalNotion", email = "tim@radicalnotion.ai" }]
+keywords = ["llm", "ai", "model-provenance", "huggingface", "architecture"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "requests>=2.31.0",
+    "rich>=13.7.0",
+]
+
+[project.optional-dependencies]
+db = ["psycopg2-binary>=2.9.9"]
+dev = ["pytest>=8.0", "ruff>=0.4"]
+
+[project.scripts]
+modeldna = "modeldna.cli:main"
+
+[project.urls]
+Homepage = "https://modeldna.ai"
+Repository = "https://github.com/RadicalNotion/modeldna-cli"
+Issues = "https://github.com/RadicalNotion/modeldna-cli/issues"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

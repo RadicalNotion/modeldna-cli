@@ -1,0 +1,70 @@
+"""
+Known base model reference signatures.
+Each entry anchors a canonical architecture family by its config.json fingerprint.
+"""
+from __future__ import annotations
+
+KNOWN_BASES: dict[str, dict] = {
+    "qwen3_5_text": {
+        "name": "Qwen3.5 (dense)",
+        "vocab_size": 248320,
+        "model_type_patterns": ["qwen3_5_text", "qwen3_5"],
+    },
+    "qwen3_5_moe_text": {
+        "name": "Qwen3.5 MoE",
+        "vocab_size": 248320,
+        "model_type_patterns": ["qwen3_5_moe_text", "qwen3_5_moe"],
+    },
+    "qwen3": {
+        "name": "Qwen3",
+        "vocab_size": [151936, 152064],
+        "model_type_patterns": ["qwen3"],
+    },
+    "qwen2": {
+        "name": "Qwen2.5",
+        "vocab_size": [151936, 152064],
+        "model_type_patterns": ["qwen2"],
+    },
+    "llama3": {
+        "name": "Llama 3.x",
+        "vocab_size": 128256,
+        "model_type_patterns": ["llama"],
+        "num_key_value_heads_hint": [8, 32],
+    },
+    "llama2": {
+        "name": "Llama 2",
+        "vocab_size": 32000,
+        "model_type_patterns": ["llama"],
+    },
+    "mistral": {
+        "name": "Mistral 7B family",
+        "vocab_size": 32000,
+        "model_type_patterns": ["mistral", "mixtral"],
+    },
+    "deepseek_v3": {
+        "name": "DeepSeek V3/R1",
+        "vocab_size": 129280,
+        "model_type_patterns": ["deepseek_v3", "deepseek_v2"],
+        "kv_lora_rank": 512,
+    },
+    "gemma": {
+        "name": "Gemma family",
+        "vocab_size": [256000, 262144],
+        "model_type_patterns": ["gemma"],
+    },
+    "glm4": {
+        "name": "GLM-4 family",
+        "vocab_size": [151552, 151936],
+        "model_type_patterns": ["chatglm"],
+    },
+    "internlm3": {
+        "name": "InternLM 3",
+        "vocab_size": 92544,
+        "model_type_patterns": ["internlm2", "internlm3"],
+    },
+    "phi4": {
+        "name": "Phi-4 family",
+        "vocab_size": [100352, 100352],
+        "model_type_patterns": ["phi3", "phi4"],
+    },
+}
