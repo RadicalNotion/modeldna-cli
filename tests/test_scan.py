@@ -57,3 +57,10 @@ def test_claude_flag_raised():
 def test_no_false_flags_clean_model():
     claims = detect_claims("Qwen/Qwen3.5-27B", {})
     assert "suspicious_name_terms" not in claims
+
+
+def test_gguf_returns_early():
+    from modeldna.scan import scan as do_scan
+    result = do_scan("unsloth/Qwen3.6-35B-A3B-GGUF")
+    assert "error" in result
+    assert "GGUF" in result["error"]

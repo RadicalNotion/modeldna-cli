@@ -203,6 +203,19 @@ def scan(model_id: str) -> dict:
         model_id = model_id.split("huggingface.co/")[-1].strip("/")
 
     t0 = time.time()
+
+    # Detect unsupported formats before attempting config fetch
+    if "gguf" in model_id.lower():
+        return {
+            "model_id": model_id,
+            "error": (
+                "GGUF models pack weights into a single file and don't have a standard config.json. "
+                "Stage 1 scanning works with standard HuggingFace checkpoints (safetensors/PyTorch). "
+                "Try the original non-quantized model instead. GGUF support is on the roadmap."
+            ),
+            "scanned_at": datetime.now(timezone.utc).isoformat(),
+        }
+
     config = fetch_config(model_id)
     if not config:
         return {
