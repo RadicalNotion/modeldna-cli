@@ -84,8 +84,9 @@ KNOWN_BASES: dict[str, dict] = {
     },
     "llada2": {
         "name": "inclusionAI LLaDA2 (discrete-diffusion MoE)",
-        "vocab_size": 157184,
+        "vocab_size": [157184, 173568],
         "model_type_patterns": ["llada2_moe", "llada2"],
+        # 157184=text, 173568=Uni any-to-any (image codebook merged into vocab)
     },
     "kimi": {
         "name": "Moonshot Kimi (K2, Kimi-Linear)",
