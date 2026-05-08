@@ -133,6 +133,21 @@ KNOWN_BASES: dict[str, dict] = {
         "vocab_size": 152576,
         "model_type_patterns": ["mimo_v2"],
     },
+    "hunyuan_v1":
+        {"name": "Tencent Hunyuan V1 (dense + MoT multimodal)",
+        "vocab_size": 120818,
+        "model_type_patterns": ["hunyuan_v1_dense", "hunyuan_vl_mot", "hunyuan"],
+    },
+    "gpt_oss": {
+        "name": "OpenAI gpt-oss (via InternVL3.5 wrapper)",
+        "vocab_size": 200028,
+        "model_type_patterns": ["gpt_oss"],
+    },
+    "valley": {
+        "name": "ByteDance Valley (video-language)",
+        "vocab_size": [151675, 151679],
+        "model_type_patterns": ["valley"],
+    },
     "emu3": {
         "name": "BAAI Emu3 family (unified vision+text)",
         "vocab_size": [184622, 282926],
