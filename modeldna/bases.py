@@ -80,11 +80,31 @@ KNOWN_BASES: dict[str, dict] = {
     "bailing_v2": {
         "name": "AntGroup Bailing-V2 / V2.5 (inclusionAI Ling)",
         "vocab_size": 157184,
-        "model_type_patterns": ["bailing_hybrid", "bailing_moe"],
+        "model_type_patterns": ["bailing_hybrid", "bailing_moe", "bailingmm_moe_v2_lite"],
+    },
+    "llada2": {
+        "name": "inclusionAI LLaDA2 (discrete-diffusion MoE)",
+        "vocab_size": 157184,
+        "model_type_patterns": ["llada2_moe", "llada2"],
     },
     "kimi": {
         "name": "Moonshot Kimi (K2, Kimi-Linear)",
         "vocab_size": 163840,
         "model_type_patterns": ["kimi_linear", "kimi"],
+    },
+    "ernie4_5_vl": {
+        "name": "Baidu ERNIE 4.5 VL (MoE multimodal)",
+        "vocab_size": 103424,
+        "model_type_patterns": ["ernie4_5_moe_vl", "ernie4_5_vl"],
+    },
+    "qianfan_vl": {
+        "name": "Baidu Qianfan-VL (dense multimodal)",
+        "vocab_size": 182025,
+        "model_type_patterns": ["qianfan_vl", "qianfan"],
+    },
+    "interns1": {
+        "name": "InternLM S1 (dense, long-chain reasoning)",
+        "vocab_size": 153216,
+        "model_type_patterns": ["interns1", "intern_s1"],
     },
 }
