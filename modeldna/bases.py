@@ -53,9 +53,9 @@ KNOWN_BASES: dict[str, dict] = {
         "model_type_patterns": ["gemma"],
     },
     "glm4": {
-        "name": "GLM-4 family",
-        "vocab_size": [151552, 151936],
-        "model_type_patterns": ["chatglm"],
+        "name": "ZhipuAI GLM-4.x (4.5 / 4.6 / 4.7 / 4.6V)",
+        "vocab_size": [151552, 151936, 154880],
+        "model_type_patterns": ["glm4v_moe_text", "glm4v_moe", "glm4_moe_lite", "glm4_moe", "glm4", "chatglm"],
     },
     "internlm3": {
         "name": "InternLM 3",
@@ -71,5 +71,20 @@ KNOWN_BASES: dict[str, dict] = {
         "name": "NemotronH (NVIDIA Mamba+MoE hybrid)",
         "vocab_size": 131072,
         "model_type_patterns": ["nemotron_h", "nemotronh"],
+    },
+    "seed_oss": {
+        "name": "ByteDance Seed-OSS (dense)",
+        "vocab_size": 155136,
+        "model_type_patterns": ["seed_oss"],
+    },
+    "bailing_v2": {
+        "name": "AntGroup Bailing-V2 / V2.5 (inclusionAI Ling)",
+        "vocab_size": 157184,
+        "model_type_patterns": ["bailing_hybrid", "bailing_moe"],
+    },
+    "kimi": {
+        "name": "Moonshot Kimi (K2, Kimi-Linear)",
+        "vocab_size": 163840,
+        "model_type_patterns": ["kimi_linear", "kimi"],
     },
 }
