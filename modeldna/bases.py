@@ -100,11 +100,16 @@ KNOWN_BASES: dict[str, dict] = {
     "qianfan_vl": {
         "name": "Baidu Qianfan-VL (dense multimodal)",
         "vocab_size": 182025,
-        "model_type_patterns": ["qianfan_vl", "qianfan"],
+        "model_type_patterns": ["qianfanvl_chat", "qianfan"],
     },
     "interns1": {
         "name": "InternLM S1 (dense, long-chain reasoning)",
         "vocab_size": 153216,
-        "model_type_patterns": ["interns1", "intern_s1"],
+        "model_type_patterns": ["interns1"],
+    },
+    "emu3": {
+        "name": "BAAI Emu3 family (unified vision+text)",
+        "vocab_size": [184622, 282926],
+        "model_type_patterns": ["emu3"],
     },
 }
