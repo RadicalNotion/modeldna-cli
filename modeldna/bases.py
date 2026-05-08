@@ -107,6 +107,11 @@ KNOWN_BASES: dict[str, dict] = {
         "vocab_size": 153216,
         "model_type_patterns": ["interns1"],
     },
+    "mimo_v2": {
+        "name": "Xiaomi MiMo V2.x",
+        "vocab_size": 152576,
+        "model_type_patterns": ["mimo_v2"],
+    },
     "emu3": {
         "name": "BAAI Emu3 family (unified vision+text)",
         "vocab_size": [184622, 282926],
