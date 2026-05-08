@@ -21,8 +21,8 @@ KNOWN_BASES: dict[str, dict] = {
         "model_type_patterns": ["qwen3"],
     },
     "qwen2": {
-        "name": "Qwen2.5",
-        "vocab_size": [151936, 152064],
+        "name": "Qwen2.5 (incl. VL)",
+        "vocab_size": [151936, 152064, 151680],
         "model_type_patterns": ["qwen2"],
     },
     "llama3": {
@@ -107,6 +107,26 @@ KNOWN_BASES: dict[str, dict] = {
         "name": "InternLM S1 (dense, long-chain reasoning)",
         "vocab_size": 153216,
         "model_type_patterns": ["interns1"],
+    },
+    "pangu_pro_moe": {
+        "name": "FreedomIntelligence Pangu-R (Huawei Pangu-Pro-MoE)",
+        "vocab_size": 153600,
+        "model_type_patterns": ["pangupromoe"],
+    },
+    "iquest_coder": {
+        "name": "IQuest-Coder",
+        "vocab_size": 76800,
+        "model_type_patterns": ["iquestcoder"],
+    },
+    "minicpm": {
+        "name": "OpenBMB MiniCPM",
+        "vocab_size": 73448,
+        "model_type_patterns": ["minicpm"],
+    },
+    "step3_5": {
+        "name": "StepFun Step-3.5 Flash",
+        "vocab_size": [128815, 128896],
+        "model_type_patterns": ["step3p5"],
     },
     "mimo_v2": {
         "name": "Xiaomi MiMo V2.x",
