@@ -164,7 +164,7 @@ KNOWN_BASES: dict[str, dict] = {
         "model_type_patterns": ["starcoder2", "gpt_bigcode"],
     },
     "zaya": {
-        "name": "Zyphra ZAYA1 (deep hybrid SSM+Attention MoE)",
+        "name": "Zyphra ZAYA1 (Global Attn + SWA + MoE)",
         "vocab_size": 262272,
         "model_type_patterns": ["zaya"],
         # 8B: 80 layers / 74B: 120 layers, GQA 16→2, Gemma tokenizer +128 tokens
