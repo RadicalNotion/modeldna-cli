@@ -161,7 +161,7 @@ KNOWN_BASES: dict[str, dict] = {
     "starcoder2": {
         "name": "BigCode StarCoder2",
         "vocab_size": 49152,
-        "model_type_patterns": ["starcoder2"],
+        "model_type_patterns": ["starcoder2", "gpt_bigcode"],
     },
     "zaya": {
         "name": "Zyphra ZAYA1 (deep hybrid SSM+Attention MoE)",
