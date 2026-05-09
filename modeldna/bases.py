@@ -67,6 +67,11 @@ KNOWN_BASES: dict[str, dict] = {
         "vocab_size": [100352, 100352],
         "model_type_patterns": ["phi3", "phi4"],
     },
+    "ministral3": {
+        "name": "Mistral 3.x (medium/large dense)",
+        "vocab_size": 131072,
+        "model_type_patterns": ["ministral3", "mistral3"],
+    },
     "nemotron_h": {
         "name": "NemotronH (NVIDIA Mamba+MoE hybrid)",
         "vocab_size": 131072,
